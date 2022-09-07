@@ -1,5 +1,12 @@
 ---
-const { lvl = '', flag = '', date, title } = Astro.props;
+export interface Props {
+  lvl?: 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2' | '';
+  flag?: string;
+  title: string;
+  date: string;
+}
+
+const { lvl = '', flag = '', date, title }: Props = Astro.props;
 ---
 
 <li class='w-full'>
