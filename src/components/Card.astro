@@ -4,15 +4,16 @@ export interface Props {
   flag?: string;
   title: string;
   date: string;
+  path?: string;
 }
 
-const { lvl = '', flag = '', date, title }: Props = Astro.props;
+const { lvl = '', flag = '', date, title, path = '/' }: Props = Astro.props;
 ---
 
 <li class='w-full'>
   <a
     class='flex flex-row gap-2 justify-between p-2 -mx-2 rounded-sm transition-colors relative hover:bg-[rgba(125,211,252,.1)]'
-    href='/'
+    href={path}
   >
     <h2 class='text-gray-800 font-sans dark:text-white w-[45%]'>{title}</h2>
     {
